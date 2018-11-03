@@ -10,7 +10,7 @@ int main()
 
 {
     char ans = 'y';
-    while(ans = 'y')
+    while(ans = 'y'&& ans !='n')
     {
 
     system("clear");
