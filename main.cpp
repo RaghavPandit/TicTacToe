@@ -6,12 +6,13 @@ void Board();
 int Checkwin();
 char BoardNum[] = {'1','2','3','4','5','6','7','8','9'};
 
+
 int main()
 
 {
-    char ans = 'y';
-    while(ans = 'y'&& ans !='n')
-    {
+    
+    
+    
 
     system("clear");
     cout<<"\t\t\t|Tic Tac Toe|"<<endl;
@@ -91,16 +92,19 @@ int main()
        {
            cout<<player1<<" Win! "<<endl;
 
-       }
-       cout <<"Do you want to play again ('y' or 'n'): "<<endl;
-       cin >> ans;
-    }
-
+       }else if(Checkwin() == 2)
+           {
+           cout<<"Game Draw!.."<<endl;
+           
+            }
+       cin.get();
     return 0;
 }
 
 void Board()
 {
+    
+    
     cout<<"\t\t\t"<<"     |     |     "<<endl;
     cout<<"\t\t\t"<<"  "<<BoardNum[0]<<"  |  "<<BoardNum[1]<<"  |  "<<BoardNum[2]<<"  "<<endl;
     cout<<"\t\t\t"<<"_____|_____|_____"<<endl;
@@ -115,31 +119,27 @@ void Board()
 
 int Checkwin()
 {
+    
+    
     if(BoardNum[0]==BoardNum[1]&&BoardNum[1]==BoardNum[2])
-    {
         return 1;
-    }else if(BoardNum[3]==BoardNum[4]&&BoardNum[4]==BoardNum[5])
-    {
+    else if(BoardNum[3]==BoardNum[4]&&BoardNum[4]==BoardNum[5])
         return 1;
-    }else if(BoardNum[6]==BoardNum[7]&&BoardNum[7]==BoardNum[8])
-    {
+    else if(BoardNum[6]==BoardNum[7]&&BoardNum[7]==BoardNum[8])
         return 1;
-    }else if(BoardNum[0]==BoardNum[4]&&BoardNum[4]==BoardNum[8])
-    {
+    else if(BoardNum[0]==BoardNum[4]&&BoardNum[4]==BoardNum[8])
         return 1;
-    }else if(BoardNum[0]==BoardNum[3]&&BoardNum[3]==BoardNum[6])
-    {
+    else if(BoardNum[0]==BoardNum[3]&&BoardNum[3]==BoardNum[6])
         return 1;
-    }else if(BoardNum[1]==BoardNum[4]&&BoardNum[4]==BoardNum[7])
-    {
+    else if(BoardNum[1]==BoardNum[4]&&BoardNum[4]==BoardNum[7])
         return 1;
-    }else if(BoardNum[2]==BoardNum[5]&&BoardNum[5]==BoardNum[8])
-    {
+    else if(BoardNum[2]==BoardNum[5]&&BoardNum[5]==BoardNum[8])
         return 1;
-    }else if(BoardNum[2]==BoardNum[4]&&BoardNum[4]==BoardNum[6])
-    {
+    else if(BoardNum[2]==BoardNum[4]&&BoardNum[4]==BoardNum[6])
         return 1;
-
-    }else
+    else if(BoardNum[0] !='1' && BoardNum[1] !='2' && BoardNum[2] !='3' && BoardNum[3] !='4' &&
+    BoardNum[4] !='5' && BoardNum[5] !='6' && BoardNum[6] !='7' && BoardNum[7] !='8' && BoardNum[8] !='9')
+        return 2;
+    else
         return 0;
 }
