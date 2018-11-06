@@ -1,3 +1,8 @@
+/***************************
+TicTacToe virsion 1
+Made by Raghav Pandit
+****************************/
+
 #include<iostream>
 
 using namespace std;
@@ -57,7 +62,7 @@ int main()
            mark = 'O';
 
        }
-       
+       //To mark player's mark on it's choice
        if(choice == 1 && BoardNum[0]=='1')
             BoardNum[0] = mark;
         else if(choice == 2 && BoardNum[1]=='2')
@@ -142,23 +147,23 @@ int Checkwin()
 {
     
     
-    if(BoardNum[0]==BoardNum[1]&&BoardNum[1]==BoardNum[2])
+    if(BoardNum[0]==BoardNum[1]&&BoardNum[1]==BoardNum[2])//Horizontal
         return 1;
-    else if(BoardNum[3]==BoardNum[4]&&BoardNum[4]==BoardNum[5])
+    else if(BoardNum[3]==BoardNum[4]&&BoardNum[4]==BoardNum[5])//Horizontal
         return 1;
-    else if(BoardNum[6]==BoardNum[7]&&BoardNum[7]==BoardNum[8])
+    else if(BoardNum[6]==BoardNum[7]&&BoardNum[7]==BoardNum[8])//Horizontal
         return 1;
-    else if(BoardNum[0]==BoardNum[4]&&BoardNum[4]==BoardNum[8])
+    else if(BoardNum[0]==BoardNum[4]&&BoardNum[4]==BoardNum[8])//Diagonally
         return 1;
-    else if(BoardNum[0]==BoardNum[3]&&BoardNum[3]==BoardNum[6])
+    else if(BoardNum[0]==BoardNum[3]&&BoardNum[3]==BoardNum[6])//Vertically
         return 1;
-    else if(BoardNum[1]==BoardNum[4]&&BoardNum[4]==BoardNum[7])
+    else if(BoardNum[1]==BoardNum[4]&&BoardNum[4]==BoardNum[7])//Vertically
         return 1;
-    else if(BoardNum[2]==BoardNum[5]&&BoardNum[5]==BoardNum[8])
+    else if(BoardNum[2]==BoardNum[5]&&BoardNum[5]==BoardNum[8])//Vertically
         return 1;
-    else if(BoardNum[2]==BoardNum[4]&&BoardNum[4]==BoardNum[6])
+    else if(BoardNum[2]==BoardNum[4]&&BoardNum[4]==BoardNum[6])//Diagonally
         return 1;
-    else if(BoardNum[0] !='1' && BoardNum[1] !='2' && BoardNum[2] !='3' && BoardNum[3] !='4' &&
+    else if(BoardNum[0] !='1' && BoardNum[1] !='2' && BoardNum[2] !='3' && BoardNum[3] !='4' &&//Checking for all the blocks to filled
     BoardNum[4] !='5' && BoardNum[5] !='6' && BoardNum[6] !='7' && BoardNum[7] !='8' && BoardNum[8] !='9')
         return 2;
     else
