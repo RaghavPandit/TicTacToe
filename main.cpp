@@ -4,14 +4,15 @@ using namespace std;
 
 void Board();
 int Checkwin();
-char BoardNum[] = {'1','2','3','4','5','6','7','8','9'};
-
+char BoardNum[9] = {'1','2','3','4','5','6','7','8','9'};
 
 int main()
 
 {
-    
-    
+    char ans='y';
+    while(ans == 'y')
+    {
+        
     
 
     system("clear");
@@ -56,27 +57,30 @@ int main()
            mark = 'O';
 
        }
-
-       switch(choice)
-       {
-           case 1: BoardNum[0]=mark;
-           break;
-           case 2: BoardNum[1]=mark;
-           break;
-           case 3: BoardNum[2]=mark;
-           break;
-           case 4: BoardNum[3]=mark;
-           break;
-           case 5: BoardNum[4]=mark;
-           break;
-           case 6: BoardNum[5]=mark;
-           break;
-           case 7: BoardNum[6]=mark;
-           break;
-           case 8: BoardNum[7]=mark;
-           break;
-           case 9: BoardNum[8]=mark;
-       }
+       
+       if(choice == 1 && BoardNum[0]=='1')
+            BoardNum[0] = mark;
+        else if(choice == 2 && BoardNum[1]=='2')
+            BoardNum[1]=mark;
+        else if(choice == 3 && BoardNum[2]=='3')
+            BoardNum[2]=mark;
+        else if(choice == 4 && BoardNum[3]=='4')
+            BoardNum[3]=mark;
+        else if(choice == 5 && BoardNum[4]=='5')
+            BoardNum[4]=mark;
+        else if(choice == 6 && BoardNum[5]=='6')
+            BoardNum[5]=mark;
+        else if(choice == 7 && BoardNum[6]=='7')
+            BoardNum[6]=mark;
+        else if(choice == 8 && BoardNum[7]=='8')
+            BoardNum[7]=mark;
+        else if(choice == 9 && BoardNum[8]=='9')
+            BoardNum[8]=mark;
+        else
+        {
+            cout<<"Invalid choice!"<<endl;
+            playernum--;
+        }
 
        system("clear");//Clears the screen
        playernum++;
@@ -97,6 +101,23 @@ int main()
            cout<<"Game Draw!.."<<endl;
            
             }
+        for(int i=0;i < 10; i++)
+        {
+            BoardNum[i]=(i);
+        }
+        cout<<"Do you want to play again(y or n): "<<endl;
+        cin>>ans;
+        //reassigning the values of the BoardNum
+        BoardNum[0] = '1';
+        BoardNum[1] = '2';
+        BoardNum[2] = '3';
+        BoardNum[3] = '4';
+        BoardNum[4] = '5';
+        BoardNum[5] = '6';
+        BoardNum[6] = '7';
+        BoardNum[7] = '8';
+        BoardNum[8] = '9';
+    }
        cin.get();
     return 0;
 }
